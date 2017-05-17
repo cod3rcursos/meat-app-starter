@@ -35,3 +35,7 @@ Expressões regulares usadas na validação de formulários
 ### Number Regex
 
 `/^[0-9]*$/`
+
+## Créditos
+
+Todas as imagens usadas na aplicação são pertencentes a freepik.com
