@@ -38,7 +38,7 @@ Expressões regulares usadas na validação de formulários
 
 ## Upgrade para Angular 4.3
 
-Abaixo as dependências dos pacotes que devem ficar em package.json
+Dependências dos pacotes que devem ficar em package.json:
 
 ```
 "dependencies": {
