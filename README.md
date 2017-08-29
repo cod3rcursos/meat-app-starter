@@ -65,6 +65,7 @@ Dependências dos pacotes que devem ficar em package.json:
     "@angular/cli": "1.2.7",
     "@angular/compiler-cli": "4.3.3",
     "@types/jasmine": "2.5.53",
+    "@types/express": "4.0.37",
     "@types/jsonwebtoken": "7.2.3",
     "@types/node": "7.0.5",
     "codelyzer": "3.1.2",
