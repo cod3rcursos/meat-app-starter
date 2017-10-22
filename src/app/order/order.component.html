@@ -1,0 +1,139 @@
+<!--INICIO DO CONTEUDO-->
+<section class="content-header">
+</section>
+
+<section class="content">
+  <section class="invoice">
+    {{form.valid | json}} {{form.value | json}}
+    <form #form="ngForm" novalidate>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <i class="fa fa-shopping-cart"></i> Finalize o seu pedido
+          </h2>
+        </div>
+      </div>
+
+      <div class="row invoice-info">
+        <div class="col-xs-12">
+          <p class="lead">Endereço de Entrega:</p>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <mt-input errorMessage="Campo Obrigatória" label="Endereço">
+            <input type="text" class="form-control" required minlength="5" name="address" ngModel placeholder="Endereço">
+          </mt-input>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <mt-input errorMessage="Campo Obrigatória e somente números" label="Número">
+            <input pattern="^[0-9]*$" type="text" class="form-control" required name="number" ngModel placeholder="Número">
+          </mt-input>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <mt-input label="Complemento">
+            <input type="text" class="form-control" name="optional" ngModel placeholder="Complemento">
+          </mt-input>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <!-- Table row -->
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="lead">Itens do Pedido:</p>
+        </div>
+        <div class="col-xs-12 table-responsive">
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="text-center">Quantidade</th>
+                <th>Item</th>
+                <th>Descrição</th>
+                <th class="text-right">Subtotal</th>
+                <th class="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">
+                  <a class="btn btn-sm"><i class="fa fa-minus"></i></a> 1
+                  <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
+                </td>
+                <td>Cup Cake</td>
+
+                <td>Recheado com doce de leite</td>
+                <td class="text-right">R$ 10,00</td>
+                <td class="text-right">
+                  <a class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">
+                  <a class="btn btn-sm"><i class="fa fa-minus"></i></a> 1
+                  <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
+                </td>
+                <td>Croissant</td>
+
+                <td>Recheado com presunto e queijo</td>
+                <td class="text-right">R$ 10,00</td>
+                <td class="text-right">
+                  <a class="btn btn-sm danger "><i class="fa fa-remove"></i></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <!-- accepted payments column -->
+        <div class="col-sm-6 col-xs-12">
+          <p class="lead">Formas de Pagamento:</p>
+
+          <div class="form-group">
+            <mt-radio [options]="paymentOptions"></mt-radio>
+          </div>
+
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6 col-xs-12">
+          <p class="lead">Frete e Total:</p>
+
+          <div class="table-responsive">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th style="width:50%">Itens:</th>
+                  <td class="text-right">R$ 20,00</td>
+                </tr>
+                <tr>
+                  <th>Frete:</th>
+                  <td class="text-right">R$ 8,00</td>
+                </tr>
+                <tr>
+                  <th>Total:</th>
+                  <td class="text-right">R$ 28,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+
+    </form>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <button href="order-summary.html" [disabled]="!form.valid" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir Pedido
+              </button>
+      </div>
+    </div>
+
+  </section>
+</section>
+<!-- FIM DO CONTEUDO-->
