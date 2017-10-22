@@ -59,8 +59,8 @@
     "*.{ts,json,css}": ["prettier --write", "git add"]
   },
   "prettier": {
-    "single-quote": true,
+    "singleQuote": true,
     "parser": "typescript",
-    "tab-width": 2
+    "tabWidth": 2
   }
 }
