@@ -6,10 +6,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "lint": "tslint \"src/**/*.ts\" --project src/tsconfig.json --type-check && tslint \"e2e/**/*.ts\" --project e2e/tsconfig.json --type-check",
+    "lint":
+      "tslint \"src/**/*.ts\" --project src/tsconfig.json --type-check && tslint \"e2e/**/*.ts\" --project e2e/tsconfig.json --type-check",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "precommit": "lint-staged"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +39,7 @@
     "@types/jasmine": "2.5.38",
     "@types/node": "7.0.5",
     "codelyzer": "2.0.0",
+    "husky": "^0.14.3",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "3.2.0",
     "karma": "1.4.1",
@@ -44,10 +47,20 @@
     "karma-cli": "1.0.1",
     "karma-jasmine": "1.1.0",
     "karma-remap-istanbul": "0.2.2",
+    "lint-staged": "^4.3.0",
+    "prettier": "^1.7.4",
     "protractor": "5.1.0",
     "ts-node": "2.1.0",
     "tslint": "4.5.0",
     "typescript": "2.2.0",
     "webdriver-manager": "10.2.5"
+  },
+  "lint-staged": {
+    "*.{ts,json,css}": ["prettier --write", "git add"]
+  },
+  "prettier": {
+    "single-quote": true,
+    "parser": "typescript",
+    "tab-width": 2
   }
 }

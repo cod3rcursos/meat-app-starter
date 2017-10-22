@@ -8,10 +8,7 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -47,7 +44,7 @@
       "config": "./protractor.conf.js"
     }
   },
-    "lint": [
+  "lint": [
     {
       "project": "src/tsconfig.app.json"
     },
