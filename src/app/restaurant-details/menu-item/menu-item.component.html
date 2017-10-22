@@ -1,11 +1,11 @@
 <div class="menu-item-info-box">
-  <span class="menu-item-info-box-icon"><img src="assets/img/foods/cupcake.png"></span>
+  <span class="menu-item-info-box-icon"><img [src]="menuItem.imagePath"></span>
 
   <div class="menu-item-info-box-content">
-    <span class="menu-item-info-box-text">Cup Cake</span>
-    <span class="menu-item-info-box-detail">Cup Cake recheado de Doce de Leite</span>
-    <span class="menu-item-info-box-price">R$ 10,00</span>
-    <a class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
+    <span class="menu-item-info-box-text">{{menuItem.name}}</span>
+    <span class="menu-item-info-box-detail">{{menuItem.description}}</span>
+    <span class="menu-item-info-box-price">{{menuItem.price | currency: 'BRL' : true}}</span>
+    <a (click)="onClick()" class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
   </div>
   <!-- /.info-box-content -->
 </div>
