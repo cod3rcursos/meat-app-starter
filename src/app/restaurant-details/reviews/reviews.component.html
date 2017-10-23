@@ -1,0 +1,20 @@
+<!-- INICIO DO CONTEUDO -->
+<div *ngFor="let review of reviews | async" class="col-xs-12 col-sm-6">
+
+  <div class="box box-solid">
+    <div class="box-header with-border">
+      <span class="review-score pull-right"><i class="fa fa-star"></i> {{review.rating}}</span>
+      <div class="user-block">
+        <img alt="User Image" class="img-circle" [src]="reviewImg(review.rating)">
+        <span class="username">{{review.name}}</span>
+        <span class="description">{{review.date | date: 'dd/mm/YY'}}</span>
+      </div>
+    </div>
+
+    <div class="box-body">
+      <p>{{review.comments}}</p>
+    </div>
+  </div>
+
+</div>
+<!--FIM DO CONTEUDO -->

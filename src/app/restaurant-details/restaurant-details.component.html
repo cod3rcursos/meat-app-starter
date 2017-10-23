@@ -1,0 +1,56 @@
+<!-- INÍCIO DO CONTEÚDO -->
+<section class="content-header">
+  <h1>
+
+  </h1>
+</section>
+
+
+<section class="content">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-solid">
+        <div class="box-header with-border">
+          <i class="fa fa-home"></i>
+
+          <h3 class="box-title">{{restaurant?.name}}</h3><span class="pull-right"><i class="fa fa-star"></i> 4.5</span>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="col-sm-3 col-xs-12" *ngIf="!!restaurant">
+            <img class="box-img-detail" [src]="restaurant?.imagePath" />
+          </div>
+
+          <dl class="col-sm-9 col-xs-12">
+            <dt>Categoria</dt>
+            <dd>{{restaurant?.category}}</dd>
+            <dt>Quem somos</dt>
+            <dd>{{restaurant?.about}}</dd>
+            <dt>Horários</dt>
+            <dd>{{restaurant?.deliveryEstimate}}</dd>
+          </dl>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer detail-footer">
+          <a class="pull-left" routerLinkActive="detail-active" [routerLink]="['menu']">
+                   Menu
+                </a>
+          <a class="pull-right" routerLinkActive="detail-active" [routerLink]="['reviews']">
+                   Avaliações
+                </a>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-xs-12 -->
+
+  </div>
+
+
+  <div class="row">
+    <!--INÍCIO DO MENU -->
+    <router-outlet></router-outlet>
+  </div>
+
+</section>
+<!-- FIM DO CONTEÚDO -->

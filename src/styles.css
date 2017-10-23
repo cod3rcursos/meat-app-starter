@@ -74,7 +74,7 @@ body {
   margin-bottom: 10px;
   text-transform: uppercase;
   width: 80%;
-  float: left
+  float: left;
 }
 .place-info-box-text {
 }
@@ -100,8 +100,8 @@ body {
 /* Detail For restaurant */
 
 .box-img-detail {
-    width: 180px;
-    height: 180px;
+  width: 180px;
+  height: 180px;
 }
 
 .box-body dl {
@@ -206,7 +206,7 @@ body {
 
 .jumbotron {
   background-color: #fff;
-  text-align:center;
+  text-align: center;
 }
 .jumbotron h2 {
   font-size: 40px;
@@ -229,27 +229,27 @@ body {
 }
 
 /*Review*/
-.review-score{
+.review-score {
   font-size: 30px;
   font-weight: bold;
 }
 
 /*rstaurant detail*/
 
-.detail-footer{
-  padding:0px
+.detail-footer {
+  padding: 0px;
 }
 
-.detail-footer > a{
+.detail-footer > a {
   text-align: center;
   font-size: 16px;
   color: #555;
-  width:50%;
+  width: 50%;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.detail-footer > a:hover{
+.detail-footer > a:hover {
   outline: none;
   text-decoration: none;
 }
