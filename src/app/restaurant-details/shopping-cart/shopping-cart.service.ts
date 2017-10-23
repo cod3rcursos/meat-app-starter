@@ -21,6 +21,17 @@ export class ShoppingCartService {
     this.items.splice(this.items.indexOf(item), 1);
   }
 
+  increaseQty(item: CartItem) {
+    item.increment();
+  }
+
+  decreaseQty(item: CartItem) {
+    item.decrement();
+    if (item.quantity === 0) {
+      this.removeItem(item);
+    }
+  }
+
   total(): number {
     return this.items.reduce((result, next) => next.value() + result, 0);
   }

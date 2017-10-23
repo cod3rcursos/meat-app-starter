@@ -1,7 +1,7 @@
 import { MenuItem } from '../menu-item/menu-item.model';
 
 export class CartItem {
-  constructor(public menuItem: MenuItem, private quantity = 1) {}
+  constructor(public menuItem: MenuItem, public quantity = 1) {}
 
   value(): number {
     let { menuItem, quantity } = this;

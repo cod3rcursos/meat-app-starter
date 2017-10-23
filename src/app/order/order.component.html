@@ -4,7 +4,6 @@
 
 <section class="content">
   <section class="invoice">
-    {{form.valid | json}} {{form.value | json}}
     <form #form="ngForm" novalidate>
       <div class="row">
         <div class="col-xs-12">
@@ -36,55 +35,12 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-
       <!-- Table row -->
       <div class="row">
         <div class="col-xs-12">
           <p class="lead">Itens do Pedido:</p>
         </div>
-        <div class="col-xs-12 table-responsive">
-
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th class="text-center">Quantidade</th>
-                <th>Item</th>
-                <th>Descrição</th>
-                <th class="text-right">Subtotal</th>
-                <th class="text-right"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-center">
-                  <a class="btn btn-sm"><i class="fa fa-minus"></i></a> 1
-                  <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
-                </td>
-                <td>Cup Cake</td>
-
-                <td>Recheado com doce de leite</td>
-                <td class="text-right">R$ 10,00</td>
-                <td class="text-right">
-                  <a class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">
-                  <a class="btn btn-sm"><i class="fa fa-minus"></i></a> 1
-                  <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
-                </td>
-                <td>Croissant</td>
-
-                <td>Recheado com presunto e queijo</td>
-                <td class="text-right">R$ 10,00</td>
-                <td class="text-right">
-                  <a class="btn btn-sm danger "><i class="fa fa-remove"></i></a>
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
-        </div>
+        <mt-order-items [items]="cartItems()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)" (remove)="removeItem($event)"></mt-order-items>
         <!-- /.col -->
       </div>
       <!-- /.row -->
@@ -95,7 +51,7 @@
           <p class="lead">Formas de Pagamento:</p>
 
           <div class="form-group">
-            <mt-radio [options]="paymentOptions" name="paymentOptions" ngModel ></mt-radio>
+            <mt-radio [options]="paymentOptions" name="paymentOptions" ngModel required></mt-radio>
           </div>
 
         </div>
@@ -103,24 +59,7 @@
         <div class="col-sm-6 col-xs-12">
           <p class="lead">Frete e Total:</p>
 
-          <div class="table-responsive">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th style="width:50%">Itens:</th>
-                  <td class="text-right">R$ 20,00</td>
-                </tr>
-                <tr>
-                  <th>Frete:</th>
-                  <td class="text-right">R$ 8,00</td>
-                </tr>
-                <tr>
-                  <th>Total:</th>
-                  <td class="text-right">R$ 28,00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <mt-delivery-costs [itemsValue]="total()" [delivery]="5"></mt-delivery-costs>
         </div>
         <!-- /.col -->
       </div>
@@ -129,8 +68,8 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <button href="order-summary.html" [disabled]="!form.valid" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir Pedido
-              </button>
+        <button (click)="checkOrder(form.value)" [disabled]="!form.valid || !cartItems().length" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir Pedido
+        </button>
       </div>
     </div>
 
