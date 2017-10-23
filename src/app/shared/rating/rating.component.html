@@ -1,0 +1,5 @@
+<i *ngFor="let rating of ratings"
+    class="fa fa-star" [class.fa-star-o]="!isStarFilled(rating)"
+    (click)="emitRating(rating)"
+    (mouseenter)="handleMouseEnter(rating)"
+    (mouseleave)="handleMouseLeave(rating)">
