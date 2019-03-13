@@ -13,7 +13,8 @@
         <div class="box-header with-border">
           <i class="fa fa-home"></i>
 
-          <h3 class="box-title">{{restaurant?.name}}</h3><span class="pull-right"><i class="fa fa-star"></i> {{restaurant?.rating}}</span>
+          <h3 class="box-title">{{restaurant?.name}}</h3><span class="pull-right"><i class="fa fa-star"></i>
+            {{restaurant?.rating}}</span>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -32,10 +33,10 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer detail-footer">
-          <a class="pull-left detail-active" href="detail-restaurant.html">
+          <a class="pull-left" routerLinkActive="detail-active" [routerLink]="['menu']">
             Menu
           </a>
-          <a class="pull-right" href="detail-restaurant-reviews.html">
+          <a class="pull-right" routerLinkActive="detail-active" [routerLink]="['reviews']">
             Avaliações
           </a>
         </div>
@@ -46,7 +47,7 @@
 
 
   <div class="row">
-    <mt-menu></mt-menu>
+      <router-outlet></router-outlet>
   </div>
 
 </section>
