@@ -1,46 +1,8 @@
+<!-- Menu -->
 <div class="col-md-9 col-xs-12">
-
-  <div class="menu-item-info-box">
-    <span class="menu-item-info-box-icon"><img src="assets/img/foods/cupcake.png"></span>
-
-    <div class="menu-item-info-box-content">
-      <span class="menu-item-info-box-text">Cup Cake</span>
-      <span class="menu-item-info-box-detail">Cup Cake recheado de Doce de Leite</span>
-      <span class="menu-item-info-box-price">R$ 10,00</span>
-      <a class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
-    </div>
-    <!-- /.info-box-content -->
-  </div>
-  <!-- /.info-box -->
-
-  <div class="menu-item-info-box">
-    <span class="menu-item-info-box-icon"><img src="assets/img/foods/donut.png"></span>
-
-    <div class="menu-item-info-box-content">
-      <span class="menu-item-info-box-text">Donut</span>
-      <span class="menu-item-info-box-detail">Coberto com chantilly</span>
-      <span class="menu-item-info-box-price">R$ 10,00</span>
-      <a class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
-    </div>
-    <!-- /.info-box-content -->
-  </div>
-  <!-- /.info-box -->
-
-  <div class="menu-item-info-box">
-    <span class="menu-item-info-box-icon"><img src="assets/img/foods/croissant.png"></span>
-
-    <div class="menu-item-info-box-content">
-      <span class="menu-item-info-box-text">Croissant</span>
-      <span class="menu-item-info-box-detail">Recheado com queijo e presunto</span>
-      <span class="menu-item-info-box-price">R$ 10,00</span>
-      <a class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
-    </div>
-    <!-- /.info-box-content -->
-  </div>
-  <!-- /.info-box -->
-
-  
+  <mt-menu-item *ngFor="let item of menu | async" [menuItem]="item" (add)="addMenuItem($event)" ></mt-menu-item>
 </div>
+<!-- Carrinho de Compras -->
 <div class="col-md-3 col-xs-12">
   <mt-shopping-cart></mt-shopping-cart>
 </div>
