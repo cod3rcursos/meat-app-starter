@@ -32,7 +32,7 @@
   <div class="box-footer" *ngIf="items().length">
     <div class="pull-right">
       <button type="button" class="btn btn-danger" (click)="clear()"><i class="fa fa-trash"></i> Limpar</button>
-      <a href="order.html" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
+      <a [routerLink]="['/order']" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
     </div>
   </div>
 </div>
