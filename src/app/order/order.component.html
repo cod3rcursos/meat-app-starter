@@ -4,7 +4,10 @@
 <section class="content">
   <section class="invoice">
 
-    <form>
+    {{form.valid}}
+    {{form.value | json}}
+
+    <form #form="ngForm" novalidate>
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
@@ -18,24 +21,37 @@
           <p class="lead">Endereço de Entrega:</p>
         </div>
         <div class="col-sm-6 col-xs-12">
-          <div class="form-group">
+          <div class="form-group" [class.has-success]="address.valid && (address.dirty || address.touched)"
+            [class.has-error]="!address.valid && (address.dirty || address.touched)">
             <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Endereço</label>
-            <input type="text" class="form-control" id="inputSuccess" placeholder="Endereço">
-            <span class="help-block"></span>
+            <input type="text" class="form-control" name="address" required minlength="5" #address="ngModel" ngModel
+              placeholder="Endereço" autocomplete="off">
+            <span class="help-block" *ngIf="address.valid && (address.dirty || address.touched)">
+              <i class="fa fa-check"></i> Ok
+            </span>
+            <span class="help-block" *ngIf="!address.valid && (address.dirty || address.touched)">
+              <i class="fa fa-remove"></i> Campo obrigatório
+            </span>
           </div>
         </div>
         <div class="col-sm-2 col-xs-6">
-          <div class="form-group has-success">
+          <div class="form-group" [class.has-success]="number.valid && (number.dirty || number.touched)"
+            [class.has-error]="!number.valid && (number.dirty || number.touched)">
             <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Número</label>
-            <input type="text" class="form-control" id="inputSuccess" placeholder="Número">
-            <span class="help-block"><i class="fa fa-check"></i> Ok</span>
+            <input type="text" class="form-control" name="number" required #number="ngModel" ngModel
+              placeholder="Número">
+            <span class="help-block" *ngIf="number.valid && (number.dirty || number.touched)"><i
+                class="fa fa-check"></i> Ok
+            </span>
+            <span class="help-block" *ngIf="!number.valid && (number.dirty || number.touched)"><i
+                class="fa fa-remove"></i> Campo obrigatório
+            </span>
           </div>
         </div>
         <div class="col-sm-4 col-xs-6">
-          <div class="form-group has-error">
+          <div class="form-group">
             <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Complemento</label>
-            <input type="text" class="form-control" id="inputSuccess" placeholder="Complemento">
-            <span class="help-block"><i class="fa fa-remove"></i> Help block with error</span>
+            <input type="text" class="form-control" name="optional" ngModel placeholder="Complemento">
           </div>
 
         </div>
@@ -158,9 +174,9 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <a href="order-summary.html" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir
-          Pedido
-        </a>
+        <button class="btn btn-success pull-right" [disabled]="!form.valid"><i class="fa fa-credit-card"></i>
+          Concluir Pedido
+        </button>
       </div>
     </div>
 
