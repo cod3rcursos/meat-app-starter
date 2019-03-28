@@ -21,16 +21,16 @@
           <p class="lead">Endereço de Entrega:</p>
         </div>
         <div class="col-sm-6 col-xs-12">
-          <mt-input-container label="Endereço" errorMessage="Campo obrigatório e com 5 caracteres">
+          <mt-input-container label="Endereço" errorMessage="Obrigatório e mínimo de 5 caracteres">
             <input class="form-control" name="address" ngModel required minlength="5" autocomplete="off" placeholder="Endereço" />
           </mt-input-container>
         </div>
-        <div class="col-sm-2 col-xs-6">
-          <mt-input-container label="Número" errorMessage="Número obrigatório">
-            <input class="form-control" name="number" ngModel required autocomplete="off" placeholder="Número">
+        <div class="col-sm-3 col-xs-6">
+          <mt-input-container label="Número" errorMessage="Obrigatório e somente números">
+            <input class="form-control" name="number" ngModel required autocomplete="off" placeholder="Número" pattern="^[0-9]*$">
           </mt-input-container>
         </div>
-        <div class="col-sm-4 col-xs-6">
+        <div class="col-sm-3 col-xs-6">
           <mt-input-container>
             <input class="form-control" name="optional" ngModel autocomplete="off" placeholder="Complemento">
           </mt-input-container>
