@@ -21,7 +21,7 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { OrderComponent } from './order/order.component';
 import { InputComponent } from './shared/input/input.component';
-
+import { RadioComponent } from './shared/radio/radio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +37,7 @@ import { InputComponent } from './shared/input/input.component';
     ReviewsComponent,
     OrderComponent,
     InputComponent,
+    RadioComponent,
   ],
   imports: [
     BrowserModule,
