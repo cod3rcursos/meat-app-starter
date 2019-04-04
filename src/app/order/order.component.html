@@ -46,48 +46,49 @@
         <div class="col-xs-12">
           <p class="lead">Itens do Pedido:</p>
         </div>
-        
-          <mt-order-items></mt-order-items>
 
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
+        <mt-order-items [items]="cartItems()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)"
+          (remove)="remove($event)"></mt-order-items>
 
-        <div class="row">
-          <!-- accepted payments column -->
-          <div class="col-sm-6 col-xs-12">
-            <p class="lead">Formas de Pagamento:</p>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
 
-            <div class="form-group">
-              <mt-radio [options]="paymentOptions" name="paymentOption" ngModel></mt-radio>
-            </div>
+      <div class="row">
+        <!-- accepted payments column -->
+        <div class="col-sm-6 col-xs-12">
+          <p class="lead">Formas de Pagamento:</p>
 
+          <div class="form-group">
+            <mt-radio [options]="paymentOptions" name="paymentOption" ngModel></mt-radio>
           </div>
-          <!-- /.col -->
-          <div class="col-sm-6 col-xs-12">
-            <p class="lead">Frete e Total:</p>
 
-            <div class="table-responsive">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <th style="width:50%">Itens:</th>
-                    <td class="text-right">R$ 20,00</td>
-                  </tr>
-                  <tr>
-                    <th>Frete:</th>
-                    <td class="text-right">R$ 8,00</td>
-                  </tr>
-                  <tr>
-                    <th>Total:</th>
-                    <td class="text-right">R$ 28,00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <!-- /.col -->
         </div>
+        <!-- /.col -->
+        <div class="col-sm-6 col-xs-12">
+          <p class="lead">Frete e Total:</p>
+
+          <div class="table-responsive">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th style="width:50%">Itens:</th>
+                  <td class="text-right">R$ 20,00</td>
+                </tr>
+                <tr>
+                  <th>Frete:</th>
+                  <td class="text-right">R$ 8,00</td>
+                </tr>
+                <tr>
+                  <th>Total:</th>
+                  <td class="text-right">R$ 28,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
 
     </form>
 
