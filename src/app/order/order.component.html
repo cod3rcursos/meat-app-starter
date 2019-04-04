@@ -46,90 +46,48 @@
         <div class="col-xs-12">
           <p class="lead">Itens do Pedido:</p>
         </div>
-        <div class="col-xs-12 table-responsive">
+        
+          <mt-order-items></mt-order-items>
 
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th class="text-center">Quantidade</th>
-                <th>Item</th>
-                <th>Descrição</th>
-                <th class="text-right">Subtotal</th>
-                <th class="text-right"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-center">
-                  <a class="btn btn-sm"><i class="fa fa-minus"></i></a>
-                  1
-                  <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
-                </td>
-                <td>Cup Cake</td>
-
-                <td>Recheado com doce de leite</td>
-                <td class="text-right">R$ 10,00</td>
-                <td class="text-right">
-                  <a class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-center">
-                  <a class="btn btn-sm"><i class="fa fa-minus"></i></a>
-                  1
-                  <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
-                </td>
-                <td>Croissant</td>
-
-                <td>Recheado com presunto e queijo</td>
-                <td class="text-right">R$ 10,00</td>
-                <td class="text-right">
-                  <a class="btn btn-sm danger "><i class="fa fa-remove"></i></a>
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
+          <!-- /.col -->
         </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+        <!-- /.row -->
 
-      <div class="row">
-        <!-- accepted payments column -->
-        <div class="col-sm-6 col-xs-12">
-          <p class="lead">Formas de Pagamento:</p>
+        <div class="row">
+          <!-- accepted payments column -->
+          <div class="col-sm-6 col-xs-12">
+            <p class="lead">Formas de Pagamento:</p>
 
-          <div class="form-group">
-            <mt-radio [options]="paymentOptions" name="paymentOption" ngModel></mt-radio>
+            <div class="form-group">
+              <mt-radio [options]="paymentOptions" name="paymentOption" ngModel></mt-radio>
+            </div>
+
           </div>
+          <!-- /.col -->
+          <div class="col-sm-6 col-xs-12">
+            <p class="lead">Frete e Total:</p>
 
-        </div>
-        <!-- /.col -->
-        <div class="col-sm-6 col-xs-12">
-          <p class="lead">Frete e Total:</p>
-
-          <div class="table-responsive">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th style="width:50%">Itens:</th>
-                  <td class="text-right">R$ 20,00</td>
-                </tr>
-                <tr>
-                  <th>Frete:</th>
-                  <td class="text-right">R$ 8,00</td>
-                </tr>
-                <tr>
-                  <th>Total:</th>
-                  <td class="text-right">R$ 28,00</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th style="width:50%">Itens:</th>
+                    <td class="text-right">R$ 20,00</td>
+                  </tr>
+                  <tr>
+                    <th>Frete:</th>
+                    <td class="text-right">R$ 8,00</td>
+                  </tr>
+                  <tr>
+                    <th>Total:</th>
+                    <td class="text-right">R$ 28,00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
+          <!-- /.col -->
         </div>
-        <!-- /.col -->
-      </div>
 
     </form>
 
