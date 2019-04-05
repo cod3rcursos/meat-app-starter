@@ -370,5 +370,23 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Rua Álvaro dos Santos",
+      "number": "193",
+      "optionalAddress": "Casa 01",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp"
+        },
+        {
+          "quantity": 2,
+          "menuId": "espreso"
+        }
+      ],
+      "id": 1
+    }
+  ]
 }
