@@ -6,8 +6,12 @@
     <h2>Pedido Conluído</h2>
     <p>Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!</p>
     <p><b>Avalie</b> sua experiência:</p>
-    <p><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-        class="fa fa-star"></i></p>
+    <p>
+      <mt-rating (rated)="rated = true"></mt-rating>
+    </p>
+    <p [hidden]="!rated">
+      Obrigado pela sua avaliação
+    </p>
   </div>
 
 </section>
