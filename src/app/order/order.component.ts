@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { Router } from '@angular/router';
 
@@ -19,11 +20,22 @@ export class OrderComponent implements OnInit {
     { label: 'Vale Refeição', value: 'REF' }
   ]
 
-  constructor(private orderService: OrderService, private router: Router) { }
+  orderForm: FormGroup
 
   delivery: number = 8 // Esse valor pode ser carregado do back-end, quando ele for implementado
 
+  constructor(private orderService: OrderService, private router: Router, private fb: FormBuilder) { }
+
   ngOnInit() {
+    this.orderForm = this.fb.group({
+      name: this.fb.control(''),
+      email: this.fb.control(''),
+      emailConfirmation: this.fb.control(''),
+      address: this.fb.control(''),
+      number: this.fb.control(''),
+      optionalAddress: this.fb.control(''),
+      paymentOption: this.fb.control('')
+    });
   }
 
   itemsValue(): number {
