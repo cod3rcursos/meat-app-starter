@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 
 import { Router } from '@angular/router';
 
@@ -20,6 +20,10 @@ export class OrderComponent implements OnInit {
     { label: 'Vale Refeição', value: 'REF' }
   ]
 
+  emailPattern: RegExp = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  numberPattern: RegExp = /^[0-9]*$/;
+
   orderForm: FormGroup
 
   delivery: number = 8 // Esse valor pode ser carregado do back-end, quando ele for implementado
@@ -28,14 +32,33 @@ export class OrderComponent implements OnInit {
 
   ngOnInit() {
     this.orderForm = this.fb.group({
-      name: this.fb.control(''),
-      email: this.fb.control(''),
-      emailConfirmation: this.fb.control(''),
-      address: this.fb.control(''),
-      number: this.fb.control(''),
+      name: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+      email: this.fb.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
+      emailConfirmation: this.fb.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
+      address: this.fb.control('', [Validators.required, Validators.minLength(5)]),
+      number: this.fb.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.fb.control(''),
-      paymentOption: this.fb.control('')
-    });
+      paymentOption: this.fb.control('', [Validators.required])
+    }, { validator: OrderComponent.equalsTo });
+  }
+
+  /** Equals To
+   * Método estático para realizar validação entre os dois e-mails digitados
+   * @param group Grupo do qual os campos de email pertencem
+   */
+  static equalsTo(group: AbstractControl): { [key: string]: boolean } {
+    const email = group.get('email');
+    const emailConfirmation = group.get('emailConfirmation');
+
+    if (!email || !emailConfirmation) {
+      return undefined;
+    }
+
+    if (email.value !== emailConfirmation.value) {
+      return { emailsNotMatch: true };
+    }
+
+    return undefined;
   }
 
   itemsValue(): number {
