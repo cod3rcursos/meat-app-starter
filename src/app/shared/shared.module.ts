@@ -5,12 +5,14 @@ import { FormsModule } from "@angular/forms"; // Quandoe stiver usando o Reactiv
 import { InputComponent } from "./input/input.component";
 import { RadioComponent } from "./radio/radio.component";
 import { RatingComponent } from "./rating/rating.component";
+import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
     InputComponent,
     RadioComponent,
     RatingComponent,
+    SnackbarComponent,
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,7 @@ import { RatingComponent } from "./rating/rating.component";
     RatingComponent,
     CommonModule,
     FormsModule,
+    SnackbarComponent,
   ],
 })
 
