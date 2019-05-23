@@ -8,6 +8,7 @@ import { RatingComponent } from "./rating/rating.component";
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 
 import { NotificationService } from "./messages/notification.service";
+import { LoginService } from '../security/login/login.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NotificationService } from "./messages/notification.service";
   ],
   providers: [
     NotificationService,
+    LoginService,
   ]
 })
 
