@@ -12,6 +12,8 @@ import { LoginService } from '../security/login/login.service';
 
 import { LoggedInGuard } from '../security/loggedin.guard';
 import { LeaveOrderGuard } from '../order/leave-order.guard';
+import { AuthInterceptor } from '../security/auth.interceptors';
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { LeaveOrderGuard } from '../order/leave-order.guard';
     LoginService,
     LoggedInGuard,
     LeaveOrderGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ]
 })
 
