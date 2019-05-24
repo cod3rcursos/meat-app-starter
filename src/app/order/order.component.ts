@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
-
 import { Router } from '@angular/router';
 
 import { RadioOption } from 'app/shared/radio/radio-option.model';
 import { OrderService } from './order.service';
 import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model';
 import { Order, OrderItem } from './order.model';
+
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'mt-order',
@@ -18,14 +19,11 @@ export class OrderComponent implements OnInit {
     { label: 'Dinheiro', value: 'MON' },
     { label: 'Cartão de Débito', value: 'DEB' },
     { label: 'Vale Refeição', value: 'REF' }
-  ]
-
+  ];
   emailPattern: RegExp = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
   numberPattern: RegExp = /^[0-9]*$/;
-
   orderForm: FormGroup
-
+  orderId: string;
   delivery: number = 8 // Esse valor pode ser carregado do back-end, quando ele for implementado
 
   constructor(private orderService: OrderService, private router: Router, private fb: FormBuilder) { }
@@ -80,9 +78,18 @@ export class OrderComponent implements OnInit {
   remove(item: CartItem) {
     this.orderService.remove(item);
   }
+
+  isOrderCompleted(): boolean {
+    return this.orderId !== undefined;
+  }
+
   checkOrder(order: Order) {
     order.orderItems = this.cartItems()
-      .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
+      .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
+
+    this.orderService.checkOrder(order)
+      .do((orderId: string) => this.orderId = orderId);
+
     this.orderService.checkOrder(order)
       .subscribe((orderId: string) => {
         this.router.navigate(['/order-summary']);

@@ -14,7 +14,7 @@
     <div class="table-responsive" *ngIf="items().length">
       <table class="table">
         <tbody>
-          <tr *ngFor="let item of items()">
+          <tr *ngFor="let item of items()" [@row]="rowState">
             <th style="width:60%">({{item.quantity}}x) {{item.menuItem.name}}</th>
             <td class="text-right">{{item.value() | currency: "BRL": true}}</td>
             <td class="text-right">

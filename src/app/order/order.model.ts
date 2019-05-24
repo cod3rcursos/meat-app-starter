@@ -4,8 +4,9 @@ class Order {
     public number: number,
     public optionalAddress: string,
     public paymentOption: string,
-    public orderItems: OrderItem[] = []
-  ) { }
+    public orderItems: OrderItem[] = [],
+    public id?: string,
+    ) { }
 }
 
 // Model dos itens do carrinho
