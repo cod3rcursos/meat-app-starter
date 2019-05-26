@@ -4,7 +4,7 @@
   <div class="menu-item-info-box-content">
     <span class="menu-item-info-box-text">{{menuItem.name}}</span>
     <span class="menu-item-info-box-detail">{{menuItem.description}}</span>
-    <span class="menu-item-info-box-price">{{menuItem.price | currency: 'BRL': true}}</span>
+    <span class="menu-item-info-box-price">{{menuItem.price | currency: 'BRL': 'symbol'}}</span>
     <a (click)="emitAddEvent()" class=""><i class="fa fa-plus-circle"></i> Adicionar</a>
   </div>
   <!-- /.info-box-content -->

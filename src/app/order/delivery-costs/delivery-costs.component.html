@@ -3,15 +3,15 @@
     <tbody>
       <tr>
         <th style="width:50%">Itens:</th>
-        <td class="text-right">{{itemsValue | currency: 'BRL': true}}</td>
+        <td class="text-right">{{itemsValue | currency: 'BRL': 'symbol'}}</td>
       </tr>
       <tr>
         <th>Frete:</th>
-        <td class="text-right">{{delivery | currency: 'BRL': true}}</td>
+        <td class="text-right">{{delivery | currency: 'BRL': 'symbol'}}</td>
       </tr>
       <tr>
         <th>Total:</th>
-        <td class="text-right">{{total() | currency: 'BRL': true}}</td>
+        <td class="text-right">{{total() | currency: 'BRL': 'symbol'}}</td>
       </tr>
     </tbody>
   </table>

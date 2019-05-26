@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms"; // Quandoe stiver usando o ReactiveForms, importar ReactiveFormsModule aqui
+import { FormsModule, ReactiveFormsModule } from "@angular/forms"; // Quandoe stiver usando o ReactiveForms, importar ReactiveFormsModule aqui
 
 import { InputComponent } from "./input/input.component";
 import { RadioComponent } from "./radio/radio.component";
@@ -25,6 +25,7 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     InputComponent,
@@ -32,6 +33,7 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
     RatingComponent,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     SnackbarComponent,
   ],
   providers: [

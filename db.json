@@ -451,6 +451,26 @@
         }
       ],
       "id": 5
+    },
+    {
+      "name": "Henrique Tesser",
+      "email": "henrique@gmail.com",
+      "emailConfirmation": "henrique@gmail.com",
+      "address": "Vila Matilde",
+      "number": "1000",
+      "optionalAddress": "Casa",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup"
+        },
+        {
+          "quantity": 1,
+          "menuId": "straw"
+        }
+      ],
+      "id": 6
     }
   ]
 }

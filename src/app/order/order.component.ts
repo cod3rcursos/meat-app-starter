@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { RadioOption } from 'app/shared/radio/radio-option.model';
@@ -29,15 +29,18 @@ export class OrderComponent implements OnInit {
   constructor(private orderService: OrderService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.orderForm = this.fb.group({
+    this.orderForm = new FormGroup({
       name: this.fb.control('', [Validators.required, Validators.minLength(5)]),
       email: this.fb.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       emailConfirmation: this.fb.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       address: this.fb.control('', [Validators.required, Validators.minLength(5)]),
       number: this.fb.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.fb.control(''),
-      paymentOption: this.fb.control('', [Validators.required])
-    }, { validator: OrderComponent.equalsTo });
+      paymentOption: new FormControl('', {
+        validators: [Validators.required],
+        updateOn: 'change'
+      })
+    }, { validators: [OrderComponent.equalsTo], updateOn: 'blur' });
   }
 
   /** Equals To
