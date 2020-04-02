@@ -1,13 +1,13 @@
-const express = require('express');
+// const express = require('express');
 const jsonServer = require('json-server')
 const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 
 const path = require('path');
-const configPath = path.join(__dirname, '../dist');
+// const configPath = path.join(__dirname, '../dist');
 
-const app = express();
+// const app = express();
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
@@ -17,7 +17,7 @@ server.get('/echo', (req, res) => {
   res.jsonp(req.query)
 })
 
-server.use(app.static(configPath));
+// server.use(app.static(configPath));
 
 server.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
