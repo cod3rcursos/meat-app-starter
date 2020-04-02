@@ -5,14 +5,17 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node backend/server.js",
     "lint": "tslint \"src/**/*.ts\" --project src/tsconfig.json --type-check && tslint \"e2e/**/*.ts\" --project e2e/tsconfig.json --type-check",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "6.0.0",
+    "@angular/compiler-cli": "6.0.0",
     "@angular/animations": "6.0.0",
     "@angular/common": "6.0.0",
     "@angular/compiler": "6.0.0",
@@ -60,5 +63,9 @@
     "jsonwebtoken": "7.4.1",
     "typescript": "2.7.2",
     "webdriver-manager": "12.0.6"
+  },
+  "engines": {
+    "node": "10.19.0",
+    "npm": "6.13.4"
   }
 }
