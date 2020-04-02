@@ -5,8 +5,9 @@ const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 
 const path = require('path');
-let configPath = path.join(__dirname, '../dist');
+const configPath = path.join(__dirname, '../dist');
 
+const app = express();
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
@@ -16,7 +17,7 @@ server.get('/echo', (req, res) => {
   res.jsonp(req.query)
 })
 
-server.use(express.static(configPath));
+server.use(app.static(configPath));
 
 server.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
