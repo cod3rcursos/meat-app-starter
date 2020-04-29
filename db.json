@@ -370,5 +370,143 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Rua Álvaro dos Santos",
+      "number": "193",
+      "optionalAddress": "Casa 01",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp"
+        },
+        {
+          "quantity": 2,
+          "menuId": "espreso"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "Rua Diamantina",
+      "number": "538",
+      "optionalAddress": "2º andar",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "espreso"
+        },
+        {
+          "quantity": 1,
+          "menuId": "sunday"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "Rua Alonso Peres",
+      "number": "226",
+      "optionalAddress": "Casa 2",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "straw"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "address": "Alonso Peres",
+      "number": "226",
+      "optionalAddress": "Casa 2",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "burger"
+        },
+        {
+          "quantity": 1,
+          "menuId": "fries"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "address": "Rua Diamantina",
+      "number": "538",
+      "optionalAddress": "Predio",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "burger"
+        },
+        {
+          "quantity": 1,
+          "menuId": "fries"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "Henrique Tesser",
+      "email": "henrique@gmail.com",
+      "emailConfirmation": "henrique@gmail.com",
+      "address": "Vila Matilde",
+      "number": "1000",
+      "optionalAddress": "Casa",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup"
+        },
+        {
+          "quantity": 1,
+          "menuId": "straw"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "name": "aaaaa",
+      "email": "a@a.com",
+      "emailConfirmation": "a@a.com",
+      "address": "lskalksal",
+      "number": "65656",
+      "optionalAddress": "565656",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "name": "Carolina Souza",
+      "email": "carolina@gmail.com",
+      "emailConfirmation": "carolina@gmail.com",
+      "address": "Alvaro dos Santos",
+      "number": "193",
+      "optionalAddress": "Casa 2",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "zlasagna"
+        }
+      ],
+      "id": 8
+    }
+  ]
 }

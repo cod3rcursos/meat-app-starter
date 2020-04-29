@@ -1,0 +1,32 @@
+<div class="col-xs-12" *ngIf="items.length === 0">
+  <p>Não há itens no seu carrinho. Gostaria de começar por <a [routerLink]="['/restaurants']">aqui</a>?</p>
+</div>
+<div class="col-xs-12 table-responsive" *ngIf="items.length > 0">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="text-center">Quantidade</th>
+        <th>Item</th>
+        <th>Descrição</th>
+        <th class="text-right">Subtotal</th>
+        <th class="text-right"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td class="text-center">
+          <a (click)="emitDecreaseQty(item)" class="btn btn-sm"><i class="fa fa-minus"></i></a>
+          {{item.quantity}}
+          <a (click)="emitIncreaseQty(item)" class="btn btn-sm"><i class="fa fa-plus"></i></a>
+        </td>
+        <td>{{item.menuItem.name}}</td>
+
+        <td>{{item.menuItem.description}}</td>
+        <td class="text-right">{{item.value() | currency: 'BRL': 'symbol'}}</td>
+        <td class="text-right">
+          <a (click)="emitRemove(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

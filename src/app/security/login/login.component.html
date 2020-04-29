@@ -1,0 +1,24 @@
+<section class="content login-content" style="margin: 10% auto">
+  <div class="login-logo">
+    <b>eatStuff</b> | Login
+  </div>
+  <div class="col-xs-12 col-sm-offset-3 col-sm-6 login-box-body">
+    <p class="login-box-msg">Por favor, efetue o login para continuar</p>
+
+    <form [formGroup]="loginForm">
+      <mt-input-container [showTip]=false>
+        <input type="text" formControlName="email" class="form-control" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </mt-input-container>
+      <mt-input-container [showTip]=false>
+        <input type="password" formControlName="password" class="form-control" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </mt-input-container>
+      <div class="row">
+        <div class="col-xs-offset-8 col-xs-4">
+          <button type="submit" (click)="login()" [disabled]="loginForm.invalid" class="btn btn-primary btn-block btn-flat">Entrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

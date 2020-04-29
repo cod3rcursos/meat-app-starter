@@ -1,0 +1,12 @@
+<div class="navbar-custom-menu">
+  <ul class="nav navbar-nav">
+    <li class="user user-menu">
+      <span *ngIf="isLoggedIn(); else notLoggedIn">
+        Olá, {{user().name}} | <a (click)="logout()">Sair</a>
+      </span>
+      <ng-template #notLoggedIn>
+        <a (click)="login()">Entrar</a>
+      </ng-template>
+    </li>
+  </ul>
+</div>
