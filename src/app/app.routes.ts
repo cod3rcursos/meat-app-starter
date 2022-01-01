@@ -5,5 +5,5 @@ import { RestaurantsComponent } from "./restaurants/restaurants.component";
 export const ROUTES: Routes = [
   { path: "", component: HomeComponent },
   { path: "restaurants", component: RestaurantsComponent },
-  { path: "about", loadChildren:'./about/about.module#AboutModule' },
+  { path: "about", loadChildren: "./about/about.module#AboutModule" },
 ];
