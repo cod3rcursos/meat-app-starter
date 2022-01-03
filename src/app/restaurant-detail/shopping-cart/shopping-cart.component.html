@@ -7,7 +7,6 @@
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-
     <div *ngIf="!items().length">
       <p class="text-center">Seu carrinho está vazio!</p>
     </div>
@@ -15,8 +14,11 @@
       <table class="table">
         <tbody>
           <tr *ngFor="let item of items()">
-            <th>{{item.menuItem.name}}</th>
+            <th>({{item.quantity}}x) {{item.menuItem.name}}</th>
             <td class="text-right">{{item.value() |currency: 'BRL': true}}</td>
+            <td class=" text-right">
+              <a (click)="removeItem(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
+            </td>
           </tr>
 
           <tr>
