@@ -25,7 +25,8 @@
         </div>
         <div class="col-sm-3 col-xs-6">
           <mt-input-container errorMessage="Obrigatório e somente números" label="Número">
-            <input type="text" class="form-control" name="number" pattern="^[0-9]*$" required ngModel placeholder="Número" />
+            <input type="text" class="form-control" name="number" pattern="^[0-9]*$" required ngModel
+              placeholder="Número" />
           </mt-input-container>
         </div>
         <div class="col-sm-3 col-xs-6">
@@ -34,7 +35,7 @@
           </mt-input-container>
         </div>
       </div>
-     
+
       <!-- /.row -->
 
       <!-- Table row -->
@@ -95,49 +96,7 @@
           <p class="lead">Formas de Pagamento:</p>
 
           <div class="form-group">
-            <div>
-              <label>
-                <div class="iradio_flat-red checked" aria-checked="false" aria-disabled="false"
-                  style="position: relative;">
-                  <input type="radio" name="r3" class="flat-red" checked="" style="position: absolute; opacity: 0;" />
-                  <ins class="iCheck-helper" style="
-                      position: absolute;
-                      top: 0%;
-                      left: 0%;
-                      display: block;
-                      width: 100%;
-                      height: 100%;
-                      margin: 0px;
-                      padding: 0px;
-                      background: rgb(255, 255, 255);
-                      border: 0px;
-                      opacity: 0;
-                    "></ins>
-                </div>
-                Dinheiro
-              </label>
-            </div>
-            <div>
-              <label>
-                <div class="iradio_flat-red" aria-checked="false" aria-disabled="false" style="position: relative;">
-                  <input type="radio" name="r3" class="flat-red" checked="" style="position: absolute; opacity: 0;" />
-                  <ins class="iCheck-helper" style="
-                      position: absolute;
-                      top: 0%;
-                      left: 0%;
-                      display: block;
-                      width: 100%;
-                      height: 100%;
-                      margin: 0px;
-                      padding: 0px;
-                      background: rgb(255, 255, 255);
-                      border: 0px;
-                      opacity: 0;
-                    "></ins>
-                </div>
-                Cartão de Débito
-              </label>
-            </div>
+            <mt-radio [options]="paymentOptions"></mt-radio>
           </div>
         </div>
         <!-- /.col -->
