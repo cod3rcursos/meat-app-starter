@@ -38,6 +38,7 @@ import { FormsModule } from "@angular/forms";
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    //configuração das rotas
     RouterModule.forRoot(ROUTES),
   ],
   providers: [
