@@ -3,6 +3,7 @@ import { CartItem } from "./cart-item.model";
 
 export class ShoppingCartServices {
   items: CartItem[] = [];
+  contItens: number = 0;
 
   clear() {
     this.items = [];
@@ -12,10 +13,14 @@ export class ShoppingCartServices {
     if (foundItem) {
       foundItem.quantity = foundItem.quantity + 1;
     } else {
+      this.contItens += 1;
+      //  console.log(this.contItens);
       this.items.push(new CartItem(item));
     }
   }
   removeItem(item: CartItem) {
+    this.contItens -= 1;
+    // console.log(this.contItens);
     this.items.splice(this.items.indexOf(item), 1);
   }
   total(): number {
