@@ -54,31 +54,14 @@
           <p class="lead">Formas de Pagamento:</p>
 
           <div class="form-group">
-            <mt-radio [options]="paymentOptions" name="paymentOptions" ngModel></mt-radio>
+            <mt-radio [options]="paymentOptions" name="paymentOptions" ngModel required></mt-radio>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-sm-6 col-xs-12">
           <p class="lead">Frete e Total:</p>
 
-          <div class="table-responsive">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th style="width: 50%;">Itens:</th>
-                  <td class="text-right">R$ 20,00</td>
-                </tr>
-                <tr>
-                  <th>Frete:</th>
-                  <td class="text-right">R$ 8,00</td>
-                </tr>
-                <tr>
-                  <th>Total:</th>
-                  <td class="text-right">R$ 28,00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <mt-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></mt-delivery-costs>
         </div>
         <!-- /.col -->
       </div>
@@ -86,7 +69,7 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <button class="btn btn-success pull-right" [disabled]="!form.valid">
+        <button class="btn btn-success pull-right" [disabled]="!form.valid || cartItems().length === 0">
           <i class="fa fa-credit-card"></i> Concluir Pedido
         </button>
       </div>
