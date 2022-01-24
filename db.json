@@ -370,5 +370,23 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "dfgdgd",
+      "number": "4",
+      "optionalAddress": "",
+      "paymentOptions": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp"
+        },
+        {
+          "quantity": 1,
+          "menuId": "espresso"
+        }
+      ],
+      "id": 1
+    }
+  ]
 }
