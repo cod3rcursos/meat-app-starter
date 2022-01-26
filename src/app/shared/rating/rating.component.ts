@@ -5,6 +5,7 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
   templateUrl: "./rating.component.html",
 })
 export class RatingComponent implements OnInit {
+  
   @Output() rated = new EventEmitter<number>();
 
   rates: number[] = [1, 2, 3, 4, 5];
