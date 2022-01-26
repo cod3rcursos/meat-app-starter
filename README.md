@@ -8,7 +8,7 @@
 
 ### Instalando as Dependências
 
-`yarn install`
+`yarn install or npm i`
 
 ## 2. Iniciando o Backend
 
