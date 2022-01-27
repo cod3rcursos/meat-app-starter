@@ -8,11 +8,7 @@
 
 ### Instalando as Dependências
 
-`npm install`
-
-### Inicializando o Servidor
-
-`ng serve` ou `npm start`
+`yarn install or npm i`
 
 ## 2. Iniciando o Backend
 
@@ -23,6 +19,10 @@
 ### Iniciando o serviço (raiz da aplicação)
 
 `json-server db.json`
+
+### Inicializando o Servidor
+
+`ng serve` ou `npm start`
 
 ## Goodies
 

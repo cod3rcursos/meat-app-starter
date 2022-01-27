@@ -27,7 +27,7 @@
       "deliveryEstimate": "30-40m",
       "rating": 4.8,
       "imagePath": "assets/img/restaurants/coffeecorner.png",
-      "about": "A Coffe Corner foi eleita a melhor cafeteria da cidade.",
+      "about": "A Coffee Corner foi eleita a melhor cafeteria da cidade.",
       "hours": "Funciona de segunda à sábado, de 6h às 22h"
     },
     {
@@ -47,7 +47,7 @@
       "deliveryEstimate": "40-65m",
       "rating": 4.5,
       "imagePath": "assets/img/restaurants/icy.png",
-      "about": "A Ice Cream é uma sorveteria inovadora.",
+      "about": "A Ice Cream é uma sorveteira inovadora.",
       "hours": "Funciona todos os dias, de 10h às 1h"
     },
     {
@@ -57,7 +57,7 @@
       "deliveryEstimate": "20m",
       "rating": 4.4,
       "imagePath": "assets/img/restaurants/tasty.png",
-      "about": "A doceria com mais tradição da cidade",
+      "about": "A doceira com mais tradição da cidade",
       "hours": "Funciona de segunda à sábado, de 8h às 23h"
     }
   ],
@@ -119,9 +119,9 @@
       "restaurantId": "coffee-corner"
     },
     {
-      "id": "espreso",
+      "id": "espresso",
       "imagePath": "assets/img/foods/espreso.png",
-      "name": "Super Espreso",
+      "name": "Super Espresso",
       "description": "Café espresso duplo. ",
       "price": 12.5,
       "restaurantId": "coffee-corner"
@@ -370,5 +370,75 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "dfgdgd",
+      "number": "4",
+      "optionalAddress": "",
+      "paymentOptions": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp"
+        },
+        {
+          "quantity": 1,
+          "menuId": "espresso"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "wefwwq",
+      "number": "2",
+      "optionalAddress": "",
+      "paymentOptions": "MON",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "sunday"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "2322323",
+      "number": "1",
+      "optionalAddress": "",
+      "paymentOptions": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "address": "adasdad",
+      "number": "1",
+      "optionalAddress": "",
+      "paymentOptions": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "address": "Criciuma",
+      "number": "1",
+      "optionalAddress": "Atp 32",
+      "paymentOptions": "DEB",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 5
+    }
+  ]
 }
