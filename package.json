@@ -21,6 +21,8 @@
     "@angular/platform-browser": "4.3.3",
     "@angular/platform-browser-dynamic": "4.3.3",
     "@angular/router": "4.3.3",
+    "@capacitor/android": "^3.4.0",
+    "@capacitor/ios": "^3.4.0",
     "admin-lte": "2.3.11",
     "core-js": "2.4.1",
     "font-awesome": "4.7.0",
@@ -35,8 +37,8 @@
   "devDependencies": {
     "@angular/cli": "1.2.7",
     "@angular/compiler-cli": "4.3.3",
-    "@types/jasmine": "2.5.53",
     "@types/express": "4.0.37",
+    "@types/jasmine": "2.5.53",
     "@types/jsonwebtoken": "7.2.3",
     "@types/node": "7.0.5",
     "codelyzer": "3.1.2",

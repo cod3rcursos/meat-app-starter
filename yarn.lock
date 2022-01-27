@@ -143,6 +143,23 @@
   dependencies:
     "tsickle" "^0.21.0"
 
+"@capacitor/android@^3.4.0":
+  "integrity" "sha512-O2hHGVzdTH2Lsmz58EI8zHY5byEFIWl9KrW60WSrO/tV6u9DpfaUq56FaejvfU27GFXDZkmoQNa33EvDYWp4wA=="
+  "resolved" "https://registry.npmjs.org/@capacitor/android/-/android-3.4.0.tgz"
+  "version" "3.4.0"
+
+"@capacitor/core@^3.4.0":
+  "integrity" "sha512-utfMAYZyU8SL+JkVOcqanjmWarSBlvCyVDPL6AnXG/B//9VtleZ5NtorUXL0ggnK7t+Zbd8xGgA+LN7mn4+3Lw=="
+  "resolved" "https://registry.npmjs.org/@capacitor/core/-/core-3.4.0.tgz"
+  "version" "3.4.0"
+  dependencies:
+    "tslib" "^2.1.0"
+
+"@capacitor/ios@^3.4.0":
+  "integrity" "sha512-S500W45rxLrcrrt+Vx4fJDhmt+07P6yaiE+l32ANV3SHcUvQMWOLXQ7JlKqwkec5er1xonmtor7PQhIt/5UKAA=="
+  "resolved" "https://registry.npmjs.org/@capacitor/ios/-/ios-3.4.0.tgz"
+  "version" "3.4.0"
+
 "@ngtools/json-schema@1.1.0":
   "integrity" "sha1-w6DFRNYjkqzCgTpCyKDcb1j4aSI="
   "resolved" "https://registry.npmjs.org/@ngtools/json-schema/-/json-schema-1.1.0.tgz"
@@ -7186,6 +7203,11 @@
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
+
+"tslib@^2.1.0":
+  "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
+  "version" "2.3.1"
 
 "tslint@^5.0.0", "tslint@5.5.0":
   "integrity" "sha1-EOjas+MGH6YelELozuOYKs8gpqo="
