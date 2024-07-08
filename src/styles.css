@@ -76,8 +76,6 @@ body {
   width: 80%;
   float: left
 }
-.place-info-box-text {
-}
 
 .place-info-box-star {
   display: block;
@@ -186,8 +184,7 @@ body {
   text-transform: uppercase;
   width: 80%;
 }
-.menu-item-info-box-text {
-}
+
 
 .menu-item-info-box-more {
   display: block;

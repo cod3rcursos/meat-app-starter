@@ -2,7 +2,9 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
     "version": "1.0.0",
-    "name": "meat"
+    "name": "meat",
+    "prefix": "mt"
+    
   },
   "apps": [
     {
